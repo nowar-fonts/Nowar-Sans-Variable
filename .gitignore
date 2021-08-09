@@ -2,3 +2,5 @@
 /font/node_modules/
 /font/out/
 /extractor/font/*.ttf
+/extractor/venv/
+__pycache__/
