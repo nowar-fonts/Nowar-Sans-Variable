@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+	<meta charset="utf-8">
+	<style>
+		@font-face {
+			font-family: "merged";
+			src: url("./out.ttf") format("opentype");
+		}
+
+		div#preview {
+			font-size: 3em;
+			font-family: "merged";
+		}
+	</style>
+</head>
+
+<body>
+	<script>
+		function updateVariation() {
+			const weight = document.getElementById("weight-slider").value;
+			const width = document.getElementById("width-slider").value;
+			document.getElementById("weight-value").innerText = weight;
+			document.getElementById("width-value").innerText = width;
+			document.getElementById("preview").style.cssText = `font-variation-settings: 'wght' ${weight}, 'wdth' ${width}`;
+		}
+	</script>
+
+	<div>
+		<span style="display: inline-block; width: 120px;">
+			<span>Weight:</span>
+			<span id="weight-value">400</span>
+		</span>
+		<input type="range" id="weight-slider" name="weight" value="400" min="200" max="900" step="5" oninput="updateVariation()" />
+	</div>
+	<div>
+		<span style="display: inline-block; width: 120px;">
+			<span>Width:</span>
+			<span id="width-value">100</span>
+		</span>
+		<input type="range" id="width-slider" name="width" value="100" min="75" max="100" step="0.5" oninput="updateVariation()" />
+	</div>
+
+	<div id="preview">
+		<p>The quick brown fox jumps over the lazy dog.</p>
+		<p>
+			浴蘭湯兮沐芳，華采衣兮若英。<br>
+			靈連蜷兮既留，爛昭昭兮未央。<br>
+			蹇將憺兮壽宮，與日月兮齊光。<br>
+			龍駕兮帝服，聊翱遊兮周章。<br>
+			靈皇皇兮既降，猋遠舉兮雲中。<br>
+			覽冀州兮有餘，橫四海兮焉窮。<br>
+			思夫君兮太息，極勞心兮憧憧。
+		</p>
+	</div>
+</body>
+
+</html>

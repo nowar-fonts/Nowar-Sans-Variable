@@ -1,1 +1,4 @@
 /font/source/shs/*.ttf
+/font/node_modules/
+/font/out/
+/extractor/font/*.ttf
